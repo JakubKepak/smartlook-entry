@@ -20,6 +20,12 @@ export const GlobalStyles = () => {
           display: flex;
           justify-content: center;
         }
+
+        a,
+        a:hover {
+          text-decoration: none;
+          color: inherit;
+        }
       `}
     />
   );
