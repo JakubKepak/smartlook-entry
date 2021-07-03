@@ -13,7 +13,7 @@ interface Props {
 export default function PostsPage({ posts }: Props): React.ReactElement {
   return (
     <S.mainContainer>
-      <Header />
+      <Header title='All Posts'/>
 
       {posts &&
         posts.map((post: PostInterface) => (

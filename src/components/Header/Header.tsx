@@ -1,9 +1,13 @@
 import * as S from './Styles';
 
-export default function Header(): React.ReactElement {
+interface Props {
+    title: string
+}
+
+export default function Header({title}: Props): React.ReactElement {
   return (
     <S.MainContainer>
-      <S.Title>Test</S.Title>
+      <S.Title>{title}</S.Title>
     </S.MainContainer>
   );
 }
