@@ -1,10 +1,10 @@
 import * as S from './Styles';
+import { Link } from 'react-router-dom';
 
 // components
 import PostPreview from 'components/PostPreview/PostPreview';
 import { PostInterface } from 'Types/Post';
-import Header from 'components/Header/Header'
-
+import Header from 'components/Header/Header';
 
 interface Props {
   posts: PostInterface[];
@@ -12,15 +12,15 @@ interface Props {
 
 export default function PostsPage({ posts }: Props): React.ReactElement {
   return (
-    
-      <S.mainContainer>
-          <Header />
+    <S.mainContainer>
+      <Header />
 
-        {posts &&
-          posts.map((post: PostInterface) => (
-            <PostPreview key={post.id} post={post} />
-          ))}
-      </S.mainContainer>
-   
+      {posts &&
+        posts.map((post: PostInterface) => (
+          <Link key={post.id} to={`/post/${post.id}`}>
+            <PostPreview  post={post} />
+          </Link>
+        ))}
+    </S.mainContainer>
   );
 }
