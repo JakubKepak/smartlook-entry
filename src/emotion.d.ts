@@ -9,6 +9,7 @@ declare module '@emotion/react' {
       fontColorDark: string;
       fontColorLight: string;
       borderDark: string;
+      horizontalDivider: string;
     };
 
     fontWeight: {

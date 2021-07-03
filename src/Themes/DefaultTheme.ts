@@ -6,6 +6,7 @@ export const defaultTheme = {
     fontColorDark: '#333F66',
     fontColorLight: '#fff',
     borderDark: '#333F66',
+    horizontalDivider: '#f0f0f0',
   },
 
   fontWeight: {
