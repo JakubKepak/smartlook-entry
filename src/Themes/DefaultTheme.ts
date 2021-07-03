@@ -5,6 +5,7 @@ export const defaultTheme = {
     backgroundHeader: '#353E66',
     fontColorDark: '#333F66',
     fontColorLight: '#fff',
+    borderDark: '#333F66',
   },
 
   fontWeight: {

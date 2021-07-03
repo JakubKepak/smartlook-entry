@@ -6,6 +6,13 @@ export const MainContainer = styled('div')`
   padding: 2rem;
   width: 100%;
   box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid transparent;
+  transition: all 0.2s;
+
+  &:hover {
+    border: 1px solid ${({ theme }) => theme.colors.borderDark};
+    cursor: pointer;
+  }
 `;
 
 export const InnerContainer = styled('div')`
