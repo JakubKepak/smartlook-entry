@@ -3,6 +3,7 @@ import { useQueryClient, useQuery } from 'react-query';
 import { ThemeProvider } from '@emotion/react';
 import { defaultTheme } from 'Themes/DefaultTheme';
 import { GlobalStyles } from 'GlobalStyles';
+import { Switch, Route } from 'react-router-dom';
 
 // components
 import PostsPage from 'pages/PostsPage/PostsPage';
@@ -21,7 +22,9 @@ function App() {
       <ThemeProvider theme={defaultTheme}>
         <GlobalStyles />
         <PageLayout>
-          <PostsPage posts={data} />
+          <Switch>
+            <Route exact path='/' render={() => <PostsPage posts={data} />} />
+          </Switch>
         </PageLayout>
       </ThemeProvider>
     </>
