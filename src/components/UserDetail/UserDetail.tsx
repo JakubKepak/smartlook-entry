@@ -1,6 +1,9 @@
 import { UserInterface } from 'Types/User';
 import * as S from './Styles';
 
+// components
+import GoogleMaps from 'components/GoogleMaps/GoogleMaps';
+
 interface Props {
   user: UserInterface;
 }
@@ -44,19 +47,22 @@ export default function UserDetail({ user }: Props): React.ReactElement {
         </S.DetailSectionContainer>
 
         <S.DetailSectionContainer>
-        <S.DetailItemContainer>
+          <S.DetailItemContainer>
             <S.DetailItemLabel>Company name</S.DetailItemLabel>
             <S.DetailItem>{user.company.name}</S.DetailItem>
-          </S.DetailItemContainer>    
-        <S.DetailItemContainer>
+          </S.DetailItemContainer>
+          <S.DetailItemContainer>
             <S.DetailItemLabel>Catch phrase</S.DetailItemLabel>
             <S.DetailItem>{user.company.catchPhrase}</S.DetailItem>
           </S.DetailItemContainer>
         </S.DetailSectionContainer>
-
-
       </S.DetailsContainer>
-      <S.MapContainer>Map</S.MapContainer>
+      <S.MapContainer>
+        <GoogleMaps
+          lat={Number(user.address.geo.lat)}
+          lng={Number(user.address.geo.lng)}
+        />
+      </S.MapContainer>
     </S.MainContainer>
   );
 }
