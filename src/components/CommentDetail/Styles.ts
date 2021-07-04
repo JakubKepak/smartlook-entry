@@ -1,22 +1,21 @@
 import styled from '@emotion/styled';
 
-export const PostContainer = styled('div')`
-  background-color: ${({ theme }) => theme.colors.backgroundColorItem};
-  border-radius: ${({ theme }) => theme.borderRadius};
-  padding: 2rem;
-  width: 100%;
-  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
-`;
-
-export const InnerContainer = styled('div')`
+export const CommentContainer = styled('div')`
   display: grid;
   grid-gap: 1rem;
 `;
 
-export const Title = styled('span')`
-  font-weight: ${({ theme }) => theme.fontWeight.extraBold};
+export const Name = styled('span')`
+  font-weight: ${({ theme }) => theme.fontWeight.bold};
 `;
 
 export const Body = styled('div')`
   font-weight: ${({ theme }) => theme.fontWeight.normal};
+`;
+
+export const CommentFooter = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  font-size: ${({ theme }) => theme.fontSize.small};
+  color: ${({ theme }) => theme.colors.fontColorGrey};
 `;

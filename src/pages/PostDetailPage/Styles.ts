@@ -30,4 +30,10 @@ export const CommentsContainer = styled.div`
   display: grid;
   grid-gap: 1rem;
   padding: 2rem;
+  background-color: ${({ theme }) => theme.colors.backgroundColorItem};
+  border-radius: ${({ theme }) => theme.borderRadius};
+`;
+
+export const CommentsHeader = styled.div`
+  font-weight: ${({ theme }) => theme.fontWeight.extraBold};
 `;

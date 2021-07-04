@@ -8,6 +8,7 @@ declare module '@emotion/react' {
       backgroundHeader: string;
       fontColorDark: string;
       fontColorLight: string;
+      fontColorGrey: string;
       borderDark: string;
       horizontalDivider: string;
     };
@@ -16,6 +17,12 @@ declare module '@emotion/react' {
       normal: string;
       bold: string;
       extraBold: string;
+    };
+
+    fontSize: {
+      small: string;
+      medium: string;
+      large: string;
     };
 
     borderRadius: string;

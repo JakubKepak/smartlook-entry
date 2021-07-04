@@ -1,11 +1,12 @@
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 import * as S from './Styles';
+import { CommentInterface } from 'Types/Comment';
 
 // components
 import PostDetail from 'components/PostDetail/PostDetail';
 import CommentDetail from 'components/CommentDetail/CommentDetail';
-import { CommentInterface } from 'Types/Comment';
+import HorizontalDivider from 'components/UI/HorizontalDivider';
 
 export default function PostDetailPage(): React.ReactElement {
   const { id } = useParams<{ id: string }>();
@@ -35,22 +36,31 @@ export default function PostDetailPage(): React.ReactElement {
     isLoading: usersIsLoading,
     error: userError,
     data: userData,
-  } = useQuery('user', () =>
-    fetch(`https://jsonplaceholder.typicode.com/users/${postData.userId}`).then(
-      (res) => res.json()
-    ),{
-        enabled: !!postData?.userId
+  } = useQuery(
+    'user',
+    () =>
+      fetch(
+        `https://jsonplaceholder.typicode.com/users/${postData.userId}`
+      ).then((res) => res.json()),
+    {
+      enabled: !!postData?.userId,
     }
   );
 
   return (
     <S.MainContainer>
-      {postData && <PostDetail post={postData} user={userData}/>}
+      {postData && <PostDetail post={postData} user={userData} />}
 
       <S.CommentsContainer>
+        <S.CommentsHeader>
+          <span>{commentsData && commentsData.length} Comments</span>
+        </S.CommentsHeader>
         {commentsData &&
           commentsData.map((comment: CommentInterface) => (
-            <CommentDetail key={comment.id} comment={comment} />
+            <>
+              <CommentDetail key={comment.id} comment={comment} />
+              <HorizontalDivider />
+            </>
           ))}
       </S.CommentsContainer>
     </S.MainContainer>
