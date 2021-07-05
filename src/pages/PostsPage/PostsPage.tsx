@@ -10,6 +10,7 @@ import Header from 'components/Header/Header';
 import Loader from 'components/UI/Loader';
 import GeneralError from 'components/GeneralError/GeneralError';
 import SearchField from 'components/UI/SearchField';
+import NoResults from 'components/NoResults/NoResults';
 
 export default function PostsPage(): React.ReactElement {
   const { isLoading, error, data } = useQuery('posts', () =>
@@ -43,8 +44,11 @@ export default function PostsPage(): React.ReactElement {
 
           {isLoading && <Loader />}
 
+          {filteredPosts.length === 0 && <NoResults />}
+
           {!isLoading &&
             data &&
+            filteredPosts.length > 0 &&
             filteredPosts.map((post: PostInterface) => (
               <Link key={post.id} to={`/post/${post.id}`}>
                 <PostPreview post={post} />
