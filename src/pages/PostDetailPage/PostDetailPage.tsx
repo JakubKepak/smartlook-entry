@@ -60,6 +60,7 @@ export default function PostDetailPage(): React.ReactElement {
             <S.CommentsHeader>
               <span>{commentsData && commentsData.length} Comments</span>
             </S.CommentsHeader>
+
             {commentsData &&
               commentsData.map((comment: CommentInterface) => (
                 <>
