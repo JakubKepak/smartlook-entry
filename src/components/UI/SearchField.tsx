@@ -1,6 +1,10 @@
 import styled from '@emotion/styled'
 
-const InputField = styled.input``
+const InputField = styled.input`
+font-family: inherit;
+padding: .2rem;
+border-radius: ${({theme}) => theme.borderRadius};
+`
 
 interface Props {
     onChange: any
@@ -8,6 +12,6 @@ interface Props {
 
 export default function SearchField({onChange}: Props): React.ReactElement {
     return (
-        <InputField onChange={onChange}/>
+        <InputField placeholder='Search...' onChange={onChange}/>
     )
 }
