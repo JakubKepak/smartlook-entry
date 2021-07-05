@@ -17,7 +17,7 @@ export default function UserDetailPage(): React.ReactElement {
 
   return (
     <MainContainer>
-      <UserDetail user={user} />;
+      <UserDetail user={user} />
     </MainContainer>
   );
 }
