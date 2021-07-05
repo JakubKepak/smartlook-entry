@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const MainContainer = styled('div')`
+export const MainContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.backgroundColorItem};
   border-radius: ${({ theme }) => theme.borderRadius};
   padding: 2rem;
@@ -15,15 +15,15 @@ export const MainContainer = styled('div')`
   }
 `;
 
-export const InnerContainer = styled('div')`
+export const InnerContainer = styled.div`
   display: grid;
   grid-gap: 1rem;
 `;
 
-export const Title = styled('span')`
+export const Title = styled.span`
   font-weight: ${({ theme }) => theme.fontWeight.extraBold};
 `;
 
-export const Body = styled('div')`
+export const Body = styled.div`
   font-weight: ${({ theme }) => theme.fontWeight.normal};
 `;

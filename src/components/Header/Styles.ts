@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const MainContainer = styled('div')`
+export const MainContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -10,7 +10,7 @@ export const MainContainer = styled('div')`
   width: 100%;
 `;
 
-export const Title = styled('div')`
+export const Title = styled.div`
   color: ${({ theme }) => theme.colors.fontColorLight};
   font-weight: ${({ theme }) => theme.fontWeight.extraBold};
 `;

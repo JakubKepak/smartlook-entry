@@ -1,15 +1,15 @@
 import styled from '@emotion/styled';
 
-export const CommentContainer = styled('div')`
+export const CommentContainer = styled.div`
   display: grid;
   grid-gap: 1rem;
 `;
 
-export const Name = styled('span')`
+export const Name = styled.span`
   font-weight: ${({ theme }) => theme.fontWeight.bold};
 `;
 
-export const Body = styled('div')`
+export const Body = styled.div`
   font-weight: ${({ theme }) => theme.fontWeight.normal};
 `;
 
