@@ -8,7 +8,7 @@ const MainContainer = styled.div`
   align-items: center;
 `;
 
-export default function NotFound() {
+export default function NotFound(): React.ReactElement {
   return (
     <MainContainer>
       <span>404</span>
