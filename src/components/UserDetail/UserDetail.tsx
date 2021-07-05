@@ -4,6 +4,7 @@ import * as S from './Styles';
 // components
 import GoogleMaps from 'components/GoogleMaps/GoogleMaps';
 import Header from 'components/Header/Header';
+import GoBack from 'components/UI/GoBack';
 
 interface Props {
   user: UserInterface;
@@ -13,6 +14,8 @@ export default function UserDetail({ user }: Props): React.ReactElement {
   return (
     <>
       <Header title='User Detail' />
+
+      <GoBack />
 
       <S.MainContainer>
         <S.DetailsContainer>

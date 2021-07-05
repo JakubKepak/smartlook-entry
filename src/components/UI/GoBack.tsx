@@ -1,24 +1,27 @@
-import styled from '@emotion/styled'
-import { useHistory } from 'react-router'
+import styled from '@emotion/styled';
+import { useHistory } from 'react-router';
+
+const MainContainer = styled.div``;
 
 const GoBackMessage = styled.span`
-    font-weight: ${({theme}) => theme.fontWeight.extraBold};
+  font-weight: ${({ theme }) => theme.fontWeight.extraBold};
+  padding-left: 1rem;
 
-    &:hover {
-        cursor: pointer;
-    }
-`
+  &:hover {
+    cursor: pointer;
+  }
+`;
 
 export default function GoBack(): React.ReactElement {
-    const history = useHistory()
+  const history = useHistory();
 
-    const onClickHandler = () => {
-        history.push("/")
-    }
+  const onClickHandler = () => {
+    history.goBack();
+  };
 
-    return (
-        <GoBackMessage onClick={onClickHandler}>
-           Go Back
-        </GoBackMessage>
-    )
+  return (
+    <MainContainer>
+      <GoBackMessage onClick={onClickHandler}>Go Back</GoBackMessage>
+    </MainContainer>
+  );
 }

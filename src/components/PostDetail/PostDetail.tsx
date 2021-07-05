@@ -15,7 +15,7 @@ interface Props {
 export default function PostDetail({ post, user }: Props): React.ReactElement {
   return (
     <>
-      {/* <Header title='Post Detail' /> */}
+      <Header title='Post Detail' />
 
       <GoBack />
 
