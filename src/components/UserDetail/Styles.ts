@@ -6,7 +6,7 @@ export const MainContainer = styled.div`
   border-radius: ${({ theme }) => theme.borderRadius};
   padding: 2rem;
   width: 100%;
-  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
+  box-shadow: ${({ theme }) => theme.boxShadow};
 
   @media ${device.sm} {
     width: 95vw;

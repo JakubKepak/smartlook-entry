@@ -25,6 +25,7 @@ declare module '@emotion/react' {
       large: string;
     };
 
+    boxShadow: string;
     borderRadius: string;
   }
 }

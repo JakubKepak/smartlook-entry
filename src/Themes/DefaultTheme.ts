@@ -22,5 +22,6 @@ export const defaultTheme = {
     large: '1.3rem',
   },
 
+  boxShadow: '0 1px 0 0 rgba(0, 0, 0, 0.1)',
   borderRadius: '5px',
 };
