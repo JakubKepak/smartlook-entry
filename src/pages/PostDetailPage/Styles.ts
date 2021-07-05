@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 export const MainContainer = styled.div`
   display: grid;
-  grid-gap: 2rem;
+  grid-gap: 1rem;
 `;
 
 export const PostContainer = styled.div`
