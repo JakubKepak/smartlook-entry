@@ -7,6 +7,7 @@ import PostPreview from 'components/PostPreview/PostPreview';
 import { PostInterface } from 'Types/Post';
 import Header from 'components/Header/Header';
 import Loader from 'components/UI/Loader';
+import GeneralError from 'components/GeneralError/GeneralError';
 
 export default function PostsPage(): React.ReactElement {
   const { isLoading, error, data } = useQuery('posts', () =>
@@ -17,17 +18,23 @@ export default function PostsPage(): React.ReactElement {
 
   return (
     <S.mainContainer>
-      <Header title='All Posts' />
+      {error && <GeneralError />}
 
-      {isLoading && <Loader />}
+      {!error && (
+        <>
+          <Header title='All Posts' />
 
-      {!isLoading &&
-        data &&
-        data.map((post: PostInterface) => (
-          <Link key={post.id} to={`/post/${post.id}`}>
-            <PostPreview post={post} />
-          </Link>
-        ))}
+          {isLoading && <Loader />}
+
+          {!isLoading &&
+            data &&
+            data.map((post: PostInterface) => (
+              <Link key={post.id} to={`/post/${post.id}`}>
+                <PostPreview post={post} />
+              </Link>
+            ))}
+        </>
+      )}
     </S.mainContainer>
   );
 }

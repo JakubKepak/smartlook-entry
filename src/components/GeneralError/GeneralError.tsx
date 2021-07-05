@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 
 // components
-import notFoundIllustration from 'assets/notfound.svg';
+import generalErrorIllustration from 'assets/generalerror.svg';
 import ErrorContainer from 'components/UI/ErrorContainer';
 
 const NotFoundImage = styled.img`
@@ -14,11 +14,16 @@ const GoBackContainer = styled.div`
   font-weight: ${({ theme }) => theme.fontWeight.extraBold};
 `;
 
-export default function NotFound(): React.ReactElement {
+const MessageContainer = styled.div`
+    margin-bottom: 1rem;
+`;
+
+export default function GeneralError(): React.ReactElement {
   return (
     <ErrorContainer>
       <>
-        <NotFoundImage src={notFoundIllustration} />
+        <NotFoundImage src={generalErrorIllustration} />
+        <MessageContainer>Oh No! Something odd is going on.</MessageContainer>
         <GoBackContainer>
           <Link to='/'>Take me home</Link>
         </GoBackContainer>
