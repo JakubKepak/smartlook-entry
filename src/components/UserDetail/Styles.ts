@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { device } from 'breakpoints';
 
 export const MainContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.backgroundColorItem};
@@ -6,12 +7,20 @@ export const MainContainer = styled.div`
   padding: 2rem;
   width: 100%;
   box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
+
+  @media ${device.sm} {
+    width: 95vw;
+  }
 `;
 
 export const DetailsContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1rem;
+
+  @media ${device.sm} {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const DetailSectionContainer = styled.div`
