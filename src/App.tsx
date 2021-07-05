@@ -1,5 +1,4 @@
 import React from 'react';
-import { useQueryClient, useQuery } from 'react-query';
 import { ThemeProvider } from '@emotion/react';
 import { defaultTheme } from 'Themes/DefaultTheme';
 import { GlobalStyles } from 'GlobalStyles';
@@ -11,14 +10,7 @@ import PageLayout from 'components/UI/PageLayout';
 import PostDetailPage from 'pages/PostDetailPage/PostDetailPage';
 import UserDetailPage from 'pages/UserDetailPage/UserDetailPage';
 
-function App() {
-  const queryClient = useQueryClient();
-
-  const { isLoading, error, data } = useQuery('posts', () =>
-    fetch('https://jsonplaceholder.typicode.com/posts').then((res) =>
-      res.json()
-    )
-  );
+function App(): React.ReactElement {
 
   return (
     <>
@@ -26,7 +18,7 @@ function App() {
         <GlobalStyles />
         <PageLayout>
           <Switch>
-            <Route exact path='/' render={() => <PostsPage posts={data} />} />
+            <Route exact path='/' render={() => <PostsPage />} />
             <Route exact path='/post/:id' render={() => <PostDetailPage />} />
             <Route exact path='/user/:id' render={() => <UserDetailPage />} />
           </Switch>

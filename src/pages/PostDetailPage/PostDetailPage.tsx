@@ -7,6 +7,7 @@ import { CommentInterface } from 'Types/Comment';
 import PostDetail from 'components/PostDetail/PostDetail';
 import CommentDetail from 'components/CommentDetail/CommentDetail';
 import HorizontalDivider from 'components/UI/HorizontalDivider';
+import Loader from 'components/UI/Loader';
 
 export default function PostDetailPage(): React.ReactElement {
   const { id } = useParams<{ id: string }>();
@@ -52,16 +53,22 @@ export default function PostDetailPage(): React.ReactElement {
       {postData && <PostDetail post={postData} user={userData} />}
 
       <S.CommentsContainer>
-        <S.CommentsHeader>
-          <span>{commentsData && commentsData.length} Comments</span>
-        </S.CommentsHeader>
-        {commentsData &&
-          commentsData.map((comment: CommentInterface) => (
-            <>
-              <CommentDetail key={comment.id} comment={comment} />
-              <HorizontalDivider />
-            </>
-          ))}
+        {commentsIsLoading && <Loader />}
+
+        {!commentsIsLoading && (
+          <>
+            <S.CommentsHeader>
+              <span>{commentsData && commentsData.length} Comments</span>
+            </S.CommentsHeader>
+            {commentsData &&
+              commentsData.map((comment: CommentInterface) => (
+                <>
+                  <CommentDetail key={comment.id} comment={comment} />
+                  <HorizontalDivider />
+                </>
+              ))}
+          </>
+        )}
       </S.CommentsContainer>
     </S.MainContainer>
   );
