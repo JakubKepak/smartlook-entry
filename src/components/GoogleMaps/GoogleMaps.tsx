@@ -17,8 +17,6 @@ export default function GoogleMaps({ lat, lng }: Props): React.ReactElement {
     googleMapsApiKey: CONSTANTS.REACT_APP_MAPS_API!,
   });
 
-  console.log(`lat ${lat} lng ${lng}`);
-
   return isLoaded ? (
     <GoogleMap
       mapContainerStyle={containerStyle}
