@@ -4,7 +4,7 @@ Simple app for listing Posts.
 
 User can see all post, detail of a post and detail of a user.
 
-You can try in the [Demo](https://laughing-perlman-950d3f.netlify.app/)
+You can try the app in the [Demo](https://laughing-perlman-950d3f.netlify.app/)
 
 ## Built with this awesome stack:
 
