@@ -9,10 +9,15 @@ const NotFoundImage = styled.img`
   height: 300px;
 `;
 
+const Message = styled.span``;
+
 export default function NoResults(): React.ReactElement {
   return (
     <ErrorContainer>
-      <NotFoundImage src={empty} />
+      <>
+        <NotFoundImage src={empty} />
+        <Message>Hm. Seems nothing is here.</Message>
+      </>
     </ErrorContainer>
   );
 }
