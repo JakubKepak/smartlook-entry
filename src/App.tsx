@@ -9,9 +9,9 @@ import PostsPage from 'pages/PostsPage/PostsPage';
 import PageLayout from 'components/UI/PageLayout';
 import PostDetailPage from 'pages/PostDetailPage/PostDetailPage';
 import UserDetailPage from 'pages/UserDetailPage/UserDetailPage';
+import NotFound from 'components/NotFound/NotFound';
 
 function App(): React.ReactElement {
-
   return (
     <>
       <ThemeProvider theme={defaultTheme}>
@@ -21,6 +21,7 @@ function App(): React.ReactElement {
             <Route exact path='/' render={() => <PostsPage />} />
             <Route exact path='/post/:id' render={() => <PostDetailPage />} />
             <Route exact path='/user/:id' render={() => <UserDetailPage />} />
+            <Route component={NotFound} />
           </Switch>
         </PageLayout>
       </ThemeProvider>
